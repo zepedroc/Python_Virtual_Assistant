@@ -3,7 +3,7 @@
 # Features
 
 - Speech Recognition
-- Turn Speech to Text
+- Talk back to You
 - Open Youtube and start playing a requested song 
 
 

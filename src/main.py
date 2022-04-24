@@ -1,6 +1,7 @@
 import pywhatkit
 from convertSpeech import handleRequest
 from talkBack import talk
+import datetime
 
 
 def runVoiceAssistant():
@@ -9,6 +10,9 @@ def runVoiceAssistant():
         command = command.replace('play', '')
         talk('Playing ' + command)
         pywhatkit.playonyt(command)
+    elif 'time' in command:
+       time = datetime.datetime.now().strftime('%I:%M %p')     
+       talk("Right now it's " + time)
 
 
 runVoiceAssistant()
