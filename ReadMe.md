@@ -6,6 +6,7 @@
 - Talk back to You
 - Open Youtube and start playing a requested song 
 - Tell the current time
+- Tell a joke
 
 
 ## Initial Steps
@@ -23,3 +24,7 @@ Youtube Packages
 - pip install flask (dependency to the next one)
 
 - pip install pywhatkit
+
+Jokes
+
+- pip install pyjokes

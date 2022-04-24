@@ -12,7 +12,7 @@ def handleRequest():
             listener.adjust_for_ambient_noise(mic, duration=1)
             audio = listener.listen(mic)
             command = listener.recognize_google(audio)
-            print('Command--- ', command)
+            print('Command: ', command)
 
     except:
         talk("I didn't understand your request")
