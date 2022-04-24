@@ -5,6 +5,7 @@
 - Speech Recognition
 - Talk back to You
 - Open Youtube and start playing a requested song 
+- Tell the current time
 
 
 ## Initial Steps
