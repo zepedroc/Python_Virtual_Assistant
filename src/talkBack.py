@@ -1,9 +1,9 @@
 import pyttsx3
 
-engine = pyttsx3.init()
-
+speaker = pyttsx3.init()
+speaker.setProperty('rate', 150)
 
 def talk(text):
     print("Transcript: ", text)
-    engine.say(text)
-    engine.runAndWait()
+    speaker.say(text)
+    speaker.runAndWait()
