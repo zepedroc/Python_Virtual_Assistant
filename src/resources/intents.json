@@ -12,7 +12,9 @@
                 "Hey",
                 "greetings"
             ],
-            "responses": [""]
+            "responses": [
+                ""
+            ]
         },
         {
             "tag": "goodbye",
@@ -24,9 +26,12 @@
                 "Have a Good day",
                 "bye",
                 "cao",
-                "see ya"
+                "see ya",
+                "thank you, goodbye"
             ],
-            "responses": [""]
+            "responses": [
+                ""
+            ]
         },
         {
             "tag": "youtube",
@@ -38,7 +43,34 @@
                 "show me a video",
                 "i want to see a video on youtube"
             ],
-            "responses": [""]
+            "responses": [
+                ""
+            ]
+        },
+        {
+            "tag": "time",
+            "patterns": [
+                "can you tell me the time?",
+                "what time is it",
+                "what is the time right now?",
+                "tell me the time"
+            ],
+            "responses": [
+                ""
+            ]
+        },
+        {
+            "tag": "joke",
+            "patterns": [
+                "can you tell me a joke?",
+                "i would like to hear a joke",
+                "do you know any jokes?",
+                "tell me a joke",
+                "how about a joke?"
+            ],
+            "responses": [
+                ""
+            ]
         }
     ]
 }
