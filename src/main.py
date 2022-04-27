@@ -15,6 +15,10 @@ def handleUserRequest():
     with speech_recognition.Microphone() as mic:
         listener.adjust_for_ambient_noise(mic, duration=1)
         audio = listener.listen(mic)
+        
+        
+        # quando chamares o nome dele dá-lhe apenas 5seg para ouvir
+        # audio = listener.record(mic, 5)
         command = listener.recognize_google(audio)
         return command.lower()
 
@@ -30,7 +34,7 @@ def runVirtualAssistant():
             assistant.request(command)
 
         except speech_recognition.UnknownValueError:
-            talk("I didn't understand your request. Can you please repeat?")
+            talk("Can you repeat?")
             listener = speech_recognition.Recognizer()
 
 

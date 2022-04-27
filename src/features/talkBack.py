@@ -1,8 +1,19 @@
 import sys
 import pyttsx3
+import random
+
+hello_options = ['Hello! What can I do for you?',
+                 'Hey there!', 'Hi! How are you?']
+goodbye_options = ['Goodbye!', 'Bye! See you next time.', 'Until next time!']
 
 speaker = pyttsx3.init()
+
+# change the voice speed
 speaker.setProperty('rate', 150)
+
+# change the voice itself
+voices = speaker.getProperty('voices')
+speaker.setProperty('voice', voices[2].id)
 
 
 def talk(text):
@@ -12,9 +23,9 @@ def talk(text):
 
 
 def hello():
-    talk('Hello! What can I do for you?')
+    talk(random.choice(hello_options))
 
 
 def closeAssistant():
-    talk('Goodbye! See you next time.')
+    talk(random.choice(goodbye_options))
     sys.exit(0)

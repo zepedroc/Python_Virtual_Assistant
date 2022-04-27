@@ -7,32 +7,44 @@
 - Open Youtube and start playing a requested song 
 - Tell the current time
 - Tell a joke
+- Open the pc camera
+- Increase/Decrease Volume
+- Increase/Decrease Brightness
 
 
-## Initial Steps
+## Dependencies
 
-- install python 3.6.8
+- python 3.6.8
 
-- pip install speechrecognition
+- speechrecognition
 
-- pip install pyttsx3
+- pyttsx3
 
-- pip install pyaudio (not sure if it's really needed)
+- pyaudio (not sure if it's really needed)
 
 ### Youtube
 
-- pip install flask (dependency to the next one)
+- flask (dependency to the next one)
 
-- pip install pywhatkit
+- pywhatkit
 
 ### Jokes
 
-- pip install pyjokes
+- pyjokes
 
 ### Recognize Patterns
 
-- pip install neuralintents
+- neuralintents
 
 - Add (import nltk / nltk.download('omw-1.4') on main.py) to the first execution of the program
 
     You have to train the modal each time you add a new feature or change the intents.json
+
+
+### Handle Keyboard and Mouse
+
+- pynput
+
+- screen-brightness-control
+
+
