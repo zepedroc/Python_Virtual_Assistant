@@ -1,7 +1,8 @@
 import pywhatkit
+import speech_recognition
 
 from features.talkBack import talk
-import speech_recognition
+from features.handleKeyboard import handleKey
 
 listener = speech_recognition.Recognizer()
 
@@ -20,3 +21,7 @@ def openYoutube():
     requestedVideo = handleUserRequest()
     pywhatkit.playonyt(requestedVideo)
     talk('Playing: ' + requestedVideo)
+
+
+def nextYoutubeVideo():
+    handleKey('n', 'Shift')

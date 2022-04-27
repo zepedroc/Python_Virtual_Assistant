@@ -16,8 +16,8 @@ sys.path.append(parent)
 from controls.keyboard import pressKey, simulateTyping
 
 
-def handleKey(key):
-    pressKey(key)
+def handleKey(key, hold=''):
+    pressKey(key, hold)
 
 
 def handleTyping(text):

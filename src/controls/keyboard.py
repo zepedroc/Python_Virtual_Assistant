@@ -13,7 +13,11 @@ def simulateTyping(text):
         sleep(0.1)
 
 
-def pressKey(key):
+def pressKey(key, hold=''):
+    if hold == 'Shift':
+        with keyboard.pressed(Key.shift):
+            keyboard.tap(key)
+
     if key == 'Windows':
         keyboard.tap(Key.cmd)
     if key == 'Enter':

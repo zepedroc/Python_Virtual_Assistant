@@ -5,6 +5,7 @@
 - Speech Recognition
 - Talk back to You
 - Open Youtube and start playing a requested song 
+- Move to the next Youtube video
 - Tell the current time
 - Tell a joke
 - Open the pc camera

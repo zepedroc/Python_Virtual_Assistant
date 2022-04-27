@@ -2,9 +2,9 @@ from features.camera import openCamera
 from features.jokes import tellJoke
 from features.talkBack import closeAssistant, hello
 from features.time import currentTime
-from features.youtube import openYoutube
-
+from features.youtube import openYoutube, nextYoutubeVideo
 from features.talkBack import talk
+
 from neuralintents import GenericAssistant
 import speech_recognition
 
@@ -43,12 +43,14 @@ mappings = {
     'time': currentTime,
     'joke': tellJoke,
     'camera': openCamera,
+    'nextYoutubeVideo': nextYoutubeVideo,
 }
 
 assistant = GenericAssistant('./resources/intents.json',
                              intent_methods=mappings)
 # assistant.train_model()
 # assistant.save_model('Model/NeuralNine Model')
+
 assistant.load_model('Model/NeuralNine Model')
 
 runVirtualAssistant()

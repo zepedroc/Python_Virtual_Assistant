@@ -83,6 +83,18 @@
             "responses": [
                 ""
             ]
+        },
+        {
+            "tag": "nextYoutubeVideo",
+            "patterns": [
+                "Next",
+                "Change to the next video",
+                "Go to the next",
+                "Skip to the next"
+            ],
+            "responses": [
+                ""
+            ]
         }
     ]
 }
