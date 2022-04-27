@@ -1,3 +1,4 @@
+from features.camera import openCamera
 from features.jokes import tellJoke
 from features.talkBack import closeAssistant, hello
 from features.time import currentTime
@@ -15,11 +16,8 @@ def handleUserRequest():
     with speech_recognition.Microphone() as mic:
         listener.adjust_for_ambient_noise(mic, duration=1)
         audio = listener.listen(mic)
-        
-        
-        # quando chamares o nome dele dá-lhe apenas 5seg para ouvir
-        # audio = listener.record(mic, 5)
         command = listener.recognize_google(audio)
+        # command = input('Command: ')
         return command.lower()
 
 
@@ -44,6 +42,7 @@ mappings = {
     'youtube': openYoutube,
     'time': currentTime,
     'joke': tellJoke,
+    'camera': openCamera,
 }
 
 assistant = GenericAssistant('./resources/intents.json',

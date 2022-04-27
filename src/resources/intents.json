@@ -71,6 +71,18 @@
             "responses": [
                 ""
             ]
+        },
+        {
+            "tag": "camera",
+            "patterns": [
+                "take a selfie",
+                "i need a mirror",
+                "open the camera",
+                "shall we take a selfie"
+            ],
+            "responses": [
+                ""
+            ]
         }
     ]
 }

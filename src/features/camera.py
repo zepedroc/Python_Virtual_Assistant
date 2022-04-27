@@ -1,5 +1,5 @@
 from time import sleep
-from handleKeyboard import handleKey, handleTyping
+from features.handleKeyboard import handleKey, handleTyping
 
 
 def openCamera():
