@@ -2,12 +2,11 @@
 
 # Features
 
-- Speech Recognition
+- Speech Recognition in pt-PT
 - Talk back to You
 - Open Youtube and start playing a requested song 
 - Move to the next Youtube video
 - Tell the current time
-- Tell a joke
 - Open the pc camera
 - Increase/Decrease Volume
 - Increase/Decrease Brightness
@@ -28,18 +27,6 @@
 - flask (dependency to the next one)
 
 - pywhatkit
-
-### Jokes
-
-- pyjokes
-
-### Recognize Patterns
-
-- neuralintents
-
-- Add (import nltk / nltk.download('omw-1.4') on main.py) to the first execution of the program
-
-    You have to train the modal each time you add a new feature or change the intents.json
 
 
 ### Handle Keyboard and Mouse

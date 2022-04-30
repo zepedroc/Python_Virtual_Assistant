@@ -10,8 +10,8 @@ listener = speech_recognition.Recognizer()
 def handleUserRequest():
     global listener
     with speech_recognition.Microphone() as mic:
-        listener.adjust_for_ambient_noise(mic, duration=1)
-        audio = listener.record(mic, 5)
+        listener.adjust_for_ambient_noise(mic, duration=0.5)
+        audio = listener.record(mic, 3)
         command = listener.recognize_google(audio)
         return command.lower()
 

@@ -1,4 +1,4 @@
-from handleKeyboard import handleKey
+from features.handleKeyboard import handleKey
 
 
 def increaseVolume():

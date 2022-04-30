@@ -1,24 +1,53 @@
 from features.camera import openCamera
-from features.jokes import tellJoke
 from features.talkBack import closeAssistant, hello
 from features.time import currentTime
+from features.volume import decreaseVolume, increaseVolume
 from features.youtube import openYoutube, nextYoutubeVideo
 from features.talkBack import talk
+from data.patterns import helloPatterns, goodbyePatterns, cameraPatterns, youtubePatterns, louderPatterns, lowerVolPatterns, currentTimePatterns, nextPatterns
 
-from neuralintents import GenericAssistant
 import speech_recognition
 
 listener = speech_recognition.Recognizer()
 
 
-def handleUserRequest():
+def command_belongs(command, array):
+    for i in range(0, len(array)):
+        if array[i] in command:
+            return True
+    return False
+
+
+def receiveCommand():
     global listener
     with speech_recognition.Microphone() as mic:
-        listener.adjust_for_ambient_noise(mic, duration=1)
-        audio = listener.listen(mic)
-        command = listener.recognize_google(audio)
-        # command = input('Command: ')
+        listener.adjust_for_ambient_noise(mic, duration=0.5)
+        audio = listener.record(mic, duration=3)
+        command = listener.recognize_google(audio, language="pt-PT")
         return command.lower()
+
+
+def handleUserRequest():
+    command = receiveCommand()
+    print('Pedido: ', command)
+    if command_belongs(command, helloPatterns):
+        hello()
+    if command_belongs(command, goodbyePatterns):
+        closeAssistant()
+    if command_belongs(command, cameraPatterns):
+        openCamera()
+    if command_belongs(command, youtubePatterns):
+        openYoutube()
+    if command_belongs(command, louderPatterns):
+        increaseVolume()
+    if command_belongs(command, lowerVolPatterns):
+        decreaseVolume()
+    if command_belongs(command, currentTimePatterns):
+        currentTime()
+    if command_belongs(command, nextPatterns):
+        nextYoutubeVideo()
+
+    print('----Não reconhecido----')
 
 
 def runVirtualAssistant():
@@ -26,31 +55,9 @@ def runVirtualAssistant():
     while True:
         global listener
         try:
-            command = handleUserRequest()
-
-            print('Command: ', command)
-            assistant.request(command)
-
+            handleUserRequest()
         except speech_recognition.UnknownValueError:
-            talk("Can you repeat?")
             listener = speech_recognition.Recognizer()
 
-
-mappings = {
-    'greetings': hello,
-    'goodbye': closeAssistant,
-    'youtube': openYoutube,
-    'time': currentTime,
-    'joke': tellJoke,
-    'camera': openCamera,
-    'nextYoutubeVideo': nextYoutubeVideo,
-}
-
-assistant = GenericAssistant('./resources/intents.json',
-                             intent_methods=mappings)
-# assistant.train_model()
-# assistant.save_model('Model/NeuralNine Model')
-
-assistant.load_model('Model/NeuralNine Model')
 
 runVirtualAssistant()
