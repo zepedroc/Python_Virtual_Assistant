@@ -17,10 +17,10 @@ def handleUserRequest():
 
 
 def openYoutube():
-    talk('What do you want me to put on?')
+    talk('O que queres que ponha a dar?')
     requestedVideo = handleUserRequest()
     pywhatkit.playonyt(requestedVideo)
-    talk('Playing: ' + requestedVideo)
+    talk('A iniciar' + requestedVideo)
 
 
 def nextYoutubeVideo():

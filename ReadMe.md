@@ -3,7 +3,7 @@
 # Features
 
 - Speech Recognition in pt-PT
-- Talk back to You
+- Talk back to You in pt-PT
 - Open Youtube and start playing a requested song 
 - Move to the next Youtube video
 - Tell the current time
@@ -15,13 +15,22 @@
 
 ## Dependencies
 
-- python 3.6.8
+### Python Version
+
+- 3.6.8
+
+### Understanding Speech
 
 - speechrecognition
 
-- pyttsx3
+### Talk Back
 
-- pyaudio (not sure if it's really needed)
+- gTTs (Google Text to Speech)
+
+- pyaudio (dependency to the next one)
+
+- playsound
+
 
 ### Youtube
 

@@ -54,7 +54,7 @@ def handleUserRequest():
 
 
 def runVirtualAssistant():
-    talk('Initializing...')
+    talk('A iniciar')
     while True:
         global listener
         try:

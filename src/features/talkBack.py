@@ -1,25 +1,23 @@
+import os
 import sys
-import pyttsx3
 import random
-
-hello_options = ['Hello! What can I do for you?',
-                 'Hey there!', 'Hi! How are you?']
-goodbye_options = ['Goodbye!', 'Bye! See you next time.', 'Until next time!']
-
-speaker = pyttsx3.init()
-
-# change the voice speed
-speaker.setProperty('rate', 150)
-
-# change the voice itself
-voices = speaker.getProperty('voices')
-speaker.setProperty('voice', voices[2].id)
+from gtts import gTTS
+from playsound import playsound
 
 
 def talk(text):
-    print("Transcript: ", text)
-    speaker.say(text)
-    speaker.runAndWait()
+    audio_info = gTTS(text, lang='pt')
+    randomNum = random.randint(0, 50000)
+    audio_info.save(f'audio{randomNum}.mp3')
+    playsound(f'audio{randomNum}.mp3')
+    os.remove(f'audio{randomNum}.mp3')
+
+
+hello_options = ['Olá! O que posso fazer por ti?',
+                 'Boas, tudo bem?', 'Olá, estás de volta!']
+
+goodbye_options = ['Adeus, até à próxima!',
+                   'Entendido. Tchau Tchau', 'Falamos depois então. Com licença.']
 
 
 def hello():
