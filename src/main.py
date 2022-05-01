@@ -1,10 +1,11 @@
 from features.camera import openCamera
+from features.internetConnection import list_internet_connection_info
 from features.talkBack import closeAssistant, hello
 from features.time import currentTime
 from features.volume import decreaseVolume, increaseVolume
 from features.youtube import openYoutube, nextYoutubeVideo
 from features.talkBack import talk
-from data.patterns import helloPatterns, goodbyePatterns, cameraPatterns, youtubePatterns, louderPatterns, lowerVolPatterns, currentTimePatterns, nextPatterns
+from data.patterns import helloPatterns, goodbyePatterns, cameraPatterns, youtubePatterns, louderPatterns, lowerVolPatterns, currentTimePatterns, nextPatterns, internetConnectionPatterns
 
 import speech_recognition
 
@@ -46,6 +47,8 @@ def handleUserRequest():
         currentTime()
     if command_belongs(command, nextPatterns):
         nextYoutubeVideo()
+    if command_belongs(command, internetConnectionPatterns):
+        list_internet_connection_info()
 
     print('----Não reconhecido----')
 

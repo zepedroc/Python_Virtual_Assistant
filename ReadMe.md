@@ -10,6 +10,7 @@
 - Open the pc camera
 - Increase/Decrease Volume
 - Increase/Decrease Brightness
+- Checks Internet Connection
 
 
 ## Dependencies
@@ -34,5 +35,9 @@
 - pynput
 
 - screen-brightness-control
+
+### Internet Speed Test
+
+- speedtest-cli
 
 

@@ -13,3 +13,5 @@ lowerVolPatterns = ['baixo', 'mais baixo']
 currentTimePatterns = ['horas']
 
 nextPatterns = ['próximo', 'próxima', 'passa']
+
+internetConnectionPatterns = ['estado', 'internet']
